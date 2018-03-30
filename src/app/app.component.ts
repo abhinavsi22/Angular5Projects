@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  userChoice: string ;
+  onSelected(userChoice: string) {
+this.userChoice = userChoice;
+  }
 }
