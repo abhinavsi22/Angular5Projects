@@ -8,8 +8,8 @@ import { Recipe } from '../recipe.model';
 export class RecipeListComponent implements OnInit {
  @Output() recipeWasSelected = new EventEmitter<Recipe>();
 recipes: Recipe[] = [
-  new Recipe('Test Recipe', 'Test Description', 'https://myfoodstory.com/wp-content/uploads/2017/02/Oven-Baked-Tandoori-Paneer-Tikka-4.jpg'),
-  new Recipe('Test Recipe', 'Test Description', 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Tandoorimumbai.jpg')
+  new Recipe('Iphone', 'Test Description', 'http://wonder-x.jp/wp-content/uploads/2018/04/iphone-x-notch.png'),
+  new Recipe('Samsung', 'Test Description', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWS5O9MFfQn19Ja82NSuSPvD0qjAJ_l26-lETlAWv6op2URtML')
 
 ];
   constructor() { }
