@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
-  userChoice: string ;
-  onSelected(userChoice: string) {
-this.userChoice = userChoice;
-  }
+//   title = 'app';
+//   userChoice: string ;
+//   onSelected(userChoice: string) {
+// this.userChoice = userChoice;
+//   }
 }

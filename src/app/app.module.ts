@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Routes , RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -11,7 +13,23 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
+import { componentFactoryName } from '@angular/compiler';
+import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 
+
+
+const appRoutes: Routes = [
+{ path: '', redirectTo: '/mobileList', pathMatch: 'full'},
+{ path: 'mobileList', component: ShoppingListComponent },
+{ path: 'planRecipe', component: RecipesComponent , children: [
+    { path: '', component: RecipeStartComponent},
+    { path: 'new', component: RecipeEditComponent},
+    { path: ':id', component: RecipeDetailComponent},
+    { path: ':id/edit', component: RecipeEditComponent}
+  ]
+}
+];
 
 @NgModule({
   declarations: [
@@ -22,10 +40,15 @@ import { ShoppingListService } from './shopping-list/shopping-list.service';
     RecipeDetailComponent,
     RecipeItemComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
+    RecipeStartComponent,
+    RecipeEditComponent
+
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]

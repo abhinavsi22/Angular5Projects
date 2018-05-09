@@ -1,4 +1,5 @@
 <br>
+<br>
 <div class="row">
   <div class="col-md-12">
       <img [src]="recipe.imagePath" alt ="" class="image-responsive" style="max-height:150px;">
@@ -17,9 +18,9 @@
               Manage Device
             </button>
             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-              <a class="dropdown-item" href="#"(click)="onAddToList()">Add to list</a>
-              <a class="dropdown-item" href="#">Edit Recipe</a>
-              <a class="dropdown-item" href="#">Delete Recipe</a>
+              <a class="dropdown-item" router-link ="/" (click)="onAddToList()">Add to list</a>
+              <a class="dropdown-item" [routerLink]= "['edit']">Edit Device(R)</a>
+              <a class="dropdown-item" href="#">Delete Device(R)</a>
             </div>
           </div>
     </div>
